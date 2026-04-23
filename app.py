@@ -19,7 +19,7 @@ from google.protobuf.message import DecodeError
 app = Flask(__name__)
 
 def load_tokens(server_name):
-    REPO = ""
+    REPO = "mahadevihik0-cyber/tokens"
     BASE_URL = f"https://raw.githubusercontent.com/{REPO}/main/"
     
     try:
@@ -143,7 +143,7 @@ def make_request(encrypt, server_name, token):
         elif server_name in {"BR", "US"}:
             url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
         else:
-            url = "https://clientbp.ggblueshark.com/GetPlayerPersonalShow"
+            url = "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow"
         app.logger.info(f"Using URL {url} for region {server_name}")
         edata = bytes.fromhex(encrypt)
         headers = {
