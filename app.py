@@ -74,7 +74,7 @@ async def send_request(encrypted_uid, token, url):
             'Expect': "100-continue",
             'X-Unity-Version': "2022.3.47f1",
             'X-GA': "v1 1",
-            'ReleaseVersion': "OB52"
+            'ReleaseVersion': "OB53"
         }
         async with aiohttp.ClientSession() as session:
             async with session.post(url, data=edata, headers=headers) as response:
@@ -102,7 +102,7 @@ async def send_multiple_requests(uid, server_name):
         elif server_name in {"BR", "US"}:
             url = "https://client.us.freefiremobile.com/LikeProfile"
         else:
-            url = "https://clientbp.ggblueshark.com/LikeProfile"
+            url = "https://clientbp.ggpolarbear.com/LikeProfile"
         app.logger.info(f"Sending LikeProfile requests to {url} for region {server_name}")
         tasks = []
         tokens = load_tokens(server_name)
@@ -155,7 +155,7 @@ def make_request(encrypt, server_name, token):
             'Expect': "100-continue",
             'X-Unity-Version': "2022.3.47f1",
             'X-GA': "v1 1",
-            'ReleaseVersion': "OB52"
+            'ReleaseVersion': "OB53"
         }
         response = requests.post(url, data=edata, headers=headers, verify=False)
         hex_data = response.content.hex()
